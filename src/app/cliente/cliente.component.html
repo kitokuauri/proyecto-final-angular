@@ -1,0 +1,11 @@
+<div>
+    <h2>Lista de Clientes:</h2>
+    <p><a routerLink="/dashboard">Volver.</a></p>
+    <div *ngFor="let cliente of clientes">
+        <p>{{ cliente.nombre }} {{ cliente.apellido }} - Edad: {{ cliente.edad }} años.</p>
+        <ul>
+            <li>Correo: {{ cliente.email }}.</li>
+            <li>Presupuesto: {{ cliente.presupuesto }}€.</li>
+        </ul>
+    </div>
+</div>

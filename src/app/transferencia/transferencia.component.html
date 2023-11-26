@@ -1,0 +1,9 @@
+<div>
+    <h2>Lista de Transferencias:</h2>
+    <p><a routerLink="/dashboard">Volver.</a></p>
+    <div *ngFor="let transferencia of transferencias">
+        <p>De: {{ transferencia.remitente }} - Para: {{ transferencia.destinatario }}.</p>
+        <p>Cantidad: {{ transferencia.cantidad }}€.</p>
+        <p>{{ transferencia.fecha }}</p>
+    </div>
+</div>

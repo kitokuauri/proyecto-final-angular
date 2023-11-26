@@ -1,0 +1,29 @@
+<div>
+    <h2>Lista de Gestores:</h2>
+    <p><a routerLink="/dashboard">Volver.</a></p>
+    <h3>Espere 5 segundos, por favor.</h3>
+
+        <div *ngFor="let gestor of gestoresMostrados">
+            <p>{{ gestor.nombre }} {{ gestor.apellido }} - Edad: {{ gestor.edad }} años.</p>
+            <ul>
+                <li>Correo: {{ gestor.email }}.</li>
+                <li>Salario: {{ gestor.salario }}€.</li>
+            </ul>
+        </div>
+
+    <button (click)="convertirGestoresAJson()">Convertir a Json</button>
+    <button (click)="convertirDesdeJson()">Convertir desde Json</button>
+    <div *ngIf="mostrarConvertidos">
+        <button (click)="ocultarConvertidos()">Ocultar</button>
+        <div *ngFor="let gestor of gestoresMostrados">
+            <p>{{ gestor.nombre }} {{ gestor.apellido }} - Edad: {{ gestor.edad }} años.</p>
+            <ul>
+                <li>Correo: {{ gestor.email }}.</li>
+                <li>Salario: {{ gestor.salario }}€.</li>
+            </ul>
+        </div>
+        <p>{{ gestoresJson }}</p>
+    </div>
+    
+</div>
+

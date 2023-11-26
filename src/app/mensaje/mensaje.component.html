@@ -1,0 +1,10 @@
+<div>
+    <h2>Lista de Mensajes:</h2>
+    <p><a routerLink="/dashboard">Volver.</a></p>
+    <div *ngFor="let mensaje of mensajes">
+        <p>De: {{ mensaje.remitente }} - Para: {{ mensaje.destinatario }}.</p>
+        <p>Mensaje: {{ mensaje.mensaje }}.</p>
+        <p>{{ mensaje.fecha }}</p>
+    </div>
+</div>
+
