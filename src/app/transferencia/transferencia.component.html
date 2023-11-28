@@ -4,6 +4,22 @@
     <div *ngFor="let transferencia of transferencias">
         <p>De: {{ transferencia.remitente }} - Para: {{ transferencia.destinatario }}.</p>
         <p>Cantidad: {{ transferencia.cantidad }}€.</p>
-        <p>{{ transferencia.fecha }}</p>
+        <p>{{ transferencia.fecha }}</p><br>
+    </div>
+
+
+    <button (click)="convertirTransAJson()">Convertir a Json</button>
+    <div *ngIf="mostrarConvertidosAJson">
+        <button (click)="ocultarConvertidos()">Ocultar</button>
+        <p>{{ transJson }}</p>
+        <button (click)="convertirDesdeJson()">Convertir desde Json</button><br>
+        <button (click)="ocultarConvertidosDesdeJson()">Ocultar</button>
+        <div *ngIf="mostrarConvertidosDesdeJson">
+            <div *ngFor="let transferencia of transferencias">
+                <p>De: {{ transferencia.remitente }} - Para: {{ transferencia.destinatario }}.</p>
+                <p>Cantidad: {{ transferencia.cantidad }}€.</p>
+                <p>{{ transferencia.fecha }}</p><br>
+            </div>
+        </div>
     </div>
 </div>

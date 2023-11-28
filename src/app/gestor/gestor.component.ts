@@ -21,7 +21,8 @@ export class GestorComponent implements OnInit, OnDestroy {
   public gestorIndex = 0;
 
   gestoresJson: string='';
-  mostrarConvertidos=false;
+  mostrarConvertidosAJson=false;
+  mostrarConvertidosDesdeJson=false;
 
   constructor(private gestorService: GestorService, private conversionService: ConversionService) {}
 
@@ -54,7 +55,7 @@ export class GestorComponent implements OnInit, OnDestroy {
       if (this.gestoresJson) {
         const arrayGest: Gestor[] = this.conversionService.convertirDesdeJson(this.gestoresJson);
         this.gestoresMostrados = arrayGest;
-        this.mostrarConvertidos = true;
+        this.mostrarConvertidosDesdeJson = true;
       }
     }
 
@@ -62,10 +63,16 @@ export class GestorComponent implements OnInit, OnDestroy {
       if (this.gestoresMostrados.length > 0) {
         this.gestoresJson = this.conversionService.convertirGesotresAJson(this.gestoresMostrados);
       }
+      this.mostrarConvertidosAJson=true;
     }
 
     ocultarConvertidos(): void {
-      this.mostrarConvertidos = false;
+      this.mostrarConvertidosAJson=false;
+      this.mostrarConvertidosDesdeJson = false;
+    }
+
+    ocultarConvertidosDesdeJson(): void {
+      this.mostrarConvertidosDesdeJson = false;
     }
 
 }

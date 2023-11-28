@@ -12,17 +12,20 @@
         </div>
 
     <button (click)="convertirGestoresAJson()">Convertir a Json</button>
-    <button (click)="convertirDesdeJson()">Convertir desde Json</button>
-    <div *ngIf="mostrarConvertidos">
+    <div *ngIf="mostrarConvertidosAJson">
         <button (click)="ocultarConvertidos()">Ocultar</button>
-        <div *ngFor="let gestor of gestoresMostrados">
-            <p>{{ gestor.nombre }} {{ gestor.apellido }} - Edad: {{ gestor.edad }} años.</p>
-            <ul>
-                <li>Correo: {{ gestor.email }}.</li>
-                <li>Salario: {{ gestor.salario }}€.</li>
-            </ul>
-        </div>
         <p>{{ gestoresJson }}</p>
+        <button (click)="convertirDesdeJson()">Convertir desde Json</button><br>
+        <button (click)="ocultarConvertidosDesdeJson()">Ocultar</button>
+        <div *ngIf="mostrarConvertidosDesdeJson">
+            <div *ngFor="let gestor of gestoresMostrados">
+                <p>{{ gestor.nombre }} {{ gestor.apellido }} - Edad: {{ gestor.edad }} años.</p>
+                <ul>
+                    <li>Correo: {{ gestor.email }}.</li>
+                    <li>Salario: {{ gestor.salario }}€.</li>
+                </ul>
+            </div>
+        </div>
     </div>
     
 </div>
