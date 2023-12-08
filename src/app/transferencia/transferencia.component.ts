@@ -15,7 +15,7 @@ export class TransferenciaComponent implements OnInit {
 
 
   transJson: string='';
-  mostrarConvertidosAJson = true;
+  mostrarConvertidosAJson = false;
   mostrarConvertidosDesdeJson=false;
 
   constructor(private transferenciaService: TransferenciaService, private conversionService: ConversionService) {}
