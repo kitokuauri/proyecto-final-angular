@@ -4,7 +4,8 @@
     <div *ngFor="let mensaje of mensajes">
         <p>De: {{ mensaje.remitente }} - Para: {{ mensaje.destinatario }}.</p>
         <p>Mensaje: {{ mensaje.mensaje }}.</p>
-        <p>{{ mensaje.fecha }}</p><br>
+        <p>{{ mensaje.fecha }}</p>
+        <hr>
     </div>
 
     <button (click)="convertirMensajesAJson()">Convertir a Json</button>
@@ -17,7 +18,8 @@
             <div *ngFor="let mensaje of mensajes">
                 <p>De: {{ mensaje.remitente }} - Para: {{ mensaje.destinatario }}.</p>
                 <p>Mensaje: {{ mensaje.mensaje }}.</p>
-                <p>{{ mensaje.fecha }}</p><br><br>
+                <p>{{ mensaje.fecha }}</p><br>
+                <hr>
             </div>
         </div>
     </div>

@@ -4,7 +4,8 @@
     <div *ngFor="let transferencia of transferencias">
         <p>De: {{ transferencia.remitente }} - Para: {{ transferencia.destinatario }}.</p>
         <p>Cantidad: {{ transferencia.cantidad }}€.</p>
-        <p>{{ transferencia.fecha }}</p><br>
+        <p>{{ transferencia.fecha }}</p>
+        <hr>
     </div>
 
 
@@ -18,7 +19,8 @@
             <div *ngFor="let transferencia of transferencias">
                 <p>De: {{ transferencia.remitente }} - Para: {{ transferencia.destinatario }}.</p>
                 <p>Cantidad: {{ transferencia.cantidad }}€.</p>
-                <p>{{ transferencia.fecha }}</p><br>
+                <p>{{ transferencia.fecha }}</p>
+                <hr>
             </div>
         </div>
     </div>
